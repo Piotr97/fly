@@ -1,0 +1,11 @@
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="form">
+
+
+    <form th:action="@{/flyapp/add/fly}" action="/flyapp/add/fly" method="post">
+        <input type="number" name="numberOfSeats" placeholder="number Of Seats"/>
+        <input type="date" name="flyStart" placeholder="fly Start"/>
+        <input type="date" name="flyEnd" placeholder="fly End"/>
+        <input type="number" name="priceTicket" placeholder="price Ticket"/>
+        <button type="submit">add this fly</button>
+    </form>
+</div>

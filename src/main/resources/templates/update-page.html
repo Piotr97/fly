@@ -1,0 +1,11 @@
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="form-update" >
+
+    <form action=/flyapp/update/fly/confirm method="post" >
+        <input type="hidden" name="id" th:value="${fly.getId()}">
+        <input type="number" name="numberOfSeats" placeholder="number Of Seats" th:value="${fly.getNumberOfSeats()}"/>
+        <input type="Date" name="flyStart" placeholder="fly Start" th:value="${fly.getFlyStart()}"/>
+        <input type="Date" name="flyEnd" placeholder="fly End" th:value="${fly.getFlyEnd()}"/><br>
+        <input type="number" name="priceTicket" placeholder="price Ticket" th:value="${fly.getPriceTicket()}"/><br>
+        <button type="submit">update this fly</button>
+    </form>
+</div>

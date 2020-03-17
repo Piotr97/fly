@@ -1,0 +1,33 @@
+<div xmlns:th="http://www.thymeleaf.org" th:fragment="table">
+    <table class="table table-bordered">
+        <tr>
+            <th>Number Seats</th>
+            <th>Start Fly</th>
+            <th>End Fly</th>
+            <th>Price Ticket</th>
+            <th>Turist List</th>
+        </tr>
+
+        <tr th:each="fly : ${flights}">
+            <td th:text="${fly.getNumberOfSeats()}"></td>
+            <td th:text="${fly.getFlyStart()}"></td>
+            <td th:text="${fly.getFlyEnd()}"></td>
+            <td th:text="${fly.getPriceTicket()}"></td>
+            <!-- <td th:text="${fly.getTuristList()}"></td>-->
+            <td>
+                <form action="/flyapp/delete/fly">
+                    <input type="hidden" name="id" th:value="${fly.getId()}">
+                    <button class="btn btn-sm btn-danger" type="submit">delete</button>
+                </form>
+            </td>
+            <td>
+                <form action="/flyapp/update/fly">
+                    <input type="hidden" name="id" th:value="${fly.getId()}">
+                    <button class="btn btn-sm btn-primary" type="submit">update</button>
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</div>
+
